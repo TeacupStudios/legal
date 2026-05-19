@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Legal Documents - Teacup Studios</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #fafafa;
+      --card-bg: #ffffff;
+      --text: #1a1a1a;
+      --text-muted: #666666;
+      --border: #e5e5e5;
+      --primary: #2563eb;
+      --primary-hover: #1d4ed8;
+      --accent-bg: #f3f4f6;
+      --radius: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.25rem;
+      letter-spacing: -0.025em;
+      color: var(--text);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 12px;
+    }
+
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* Tab Navigation */
+    .tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 30px;
+      background-color: var(--accent-bg);
+      padding: 4px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+    }
+
+    .tab-btn {
+      flex: 1;
+      background: none;
+      border: none;
+      font-family: inherit;
+      font-size: 0.95rem;
+      font-weight: 500;
+      padding: 10px 16px;
+      color: var(--text-muted);
+      cursor: pointer;
+      border-radius: calc(var(--radius) - 2px);
+      transition: all 0.2s ease;
+    }
+
+    .tab-btn:hover {
+      color: var(--text);
+    }
+
+    .tab-btn.active {
+      background-color: var(--card-bg);
+      color: var(--text);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+
+    /* Document Card */
+    .card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 40px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    /* Content Typography */
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-top: 32px;
+      margin-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 8px;
+    }
+
+    h2:first-of-type {
+      margin-top: 0;
+    }
+
+    p {
+      margin-bottom: 16px;
+      font-size: 0.975rem;
+      color: var(--text);
+    }
+
+    ul {
+      margin-bottom: 20px;
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 8px;
+      font-size: 0.975rem;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+
+    a:hover {
+      color: var(--primary-hover);
+      text-decoration: underline;
+    }
+
+    .date-badge {
+      display: inline-block;
+      background-color: var(--accent-bg);
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 24px 12px;
+      }
+      .card {
+        padding: 24px 16px;
+      }
+      h1 {
+        font-size: 1.6rem;
+      }
+      .tabs {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <div class="logo">Teacup Studios</div>
+      <h1>Legal Center</h1>
+      <p class="subtitle">Terms of Service and Privacy Policy for our apps & services</p>
+    </header>
+
+    <div class="tabs">
+      <button class="tab-btn active" onclick="switchTab(event, 'privacy')">Privacy Policy</button>
+      <button class="tab-btn" onclick="switchTab(event, 'terms')">Terms &amp; Conditions</button>
+    </div>
+
+    <div class="card">
+      
+      <!-- ─── PRIVACY POLICY CONTENT ─── -->
+      <div id="privacy" class="tab-content active">
+        <div class="date-badge">Effective Date: May 18, 2026</div>
+        
+        <h2>1. Introduction</h2>
+        <p>This privacy policy applies to the mobile applications and games (collectively referred to as "Application" or "Services") created and operated by <strong>Teacup Studios</strong> ("Service Provider", "we", "us", or "our") as Freemium services. This service is intended for use "AS IS".</p>
+        <p>By downloading, installing, or using our Applications, you consent to the collection, use, and disclosure of your information as described in this Policy.</p>
+
+        <h2>2. Information Collection and Use</h2>
+        <p>The Application collects information when you download and use it. This information may include details such as:</p>
+        <ul>
+          <li>Your device's Internet Protocol (IP) address</li>
+          <li>The pages or screens of the Application that you visit, the time and date of your visit, and the time spent on those screens</li>
+          <li>The total duration of your usage of the Application</li>
+          <li>The operating system, model, and configuration of your mobile device</li>
+          <li>Device advertising identifiers (such as Google Advertising ID and Apple IDFA) for advertising and analytics purposes.</li>
+        </ul>
+        <p>Our Applications do not collect or gather precise real-time location information about your mobile device.</p>
+
+        <h2>3. Artificial Intelligence (AI) Features</h2>
+        <p>Our Applications utilize Artificial Intelligence (AI) models and API services (such as Google Gemini) to enhance gameplay and provide dynamic features (for example, generating custom categories or translate terms). The AI components may process game setup details or user input text to deliver personalized contents and automated functionalities. All AI processing is performed strictly in accordance with this Privacy Policy and applicable data protection regulations. No personal identifiers are forwarded to these AI services.</p>
+
+        <h2>4. Communications</h2>
+        <p>The Service Provider may use the information you provide to contact you from time to time to share important updates, required notices, or marketing promotions related to our games.</p>
+
+        <h2>5. Third-Party Services &amp; Advertising</h2>
+        <p>Only aggregated, anonymized data is periodically transmitted to external services to aid us in improving the Application and our services. We work with third-party service providers who have their own privacy policies regarding data handling.</p>
+        <p>We recommend you read the privacy policy of our partner services:</p>
+        <ul>
+          <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Play Services</a></li>
+          <li><a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener noreferrer">AdMob (Google Advertising)</a></li>
+        </ul>
+
+        <h2>6. Disclosure of Information</h2>
+        <p>We may disclose User-Provided and Automatically Collected Information in the following circumstances:</p>
+        <ul>
+          <li>As required by law, such as to comply with a subpoena or similar legal process.</li>
+          <li>When we believe in good faith that disclosure is necessary to protect our rights, protect your safety or the safety of others, investigate fraud, or respond to a government request.</li>
+          <li>With trusted service providers who work on our behalf, do not have independent use of the information we disclose to them, and have agreed to adhere to the rules set forth in this privacy statement.</li>
+        </ul>
+
+        <h2>7. Opt-Out &amp; Data Deletion Rights</h2>
+        <p>You can easily stop all collection of information by the Application by uninstalling it. You may use the standard uninstall processes available as part of your mobile device or via the mobile application marketplace.</p>
+        <p>If you wish to request the deletion of any user-provided data you submitted through the Application, please contact us at <a href="mailto:hello.teacupstudios@gmail.com">hello.teacupstudios@gmail.com</a>. We will respond within a reasonable timeframe.</p>
+
+        <h2>8. Children's Privacy</h2>
+        <p>The Service Provider does not knowingly collect personally identifiable information from children under 13 years of age (or under 16 years of age for users within the European Union/European Economic Area). If we discover that a child under these age limits has provided personal information, we will immediately delete this from our servers. If you are a parent or guardian and are aware that your child has provided us with personal information, please contact us at <a href="mailto:hello.teacupstudios@gmail.com">hello.teacupstudios@gmail.com</a> so we can take necessary action.</p>
+
+        <h2>9. Security</h2>
+        <p>We are committed to safeguarding the confidentiality of your information. We implement physical, electronic, and procedural safeguards to protect the information we process and maintain.</p>
+
+        <h2>10. Changes to This Policy</h2>
+        <p>This Privacy Policy may be updated from time to time. We will notify you of any changes by posting the new policy on this page. You are advised to consult this Privacy Policy regularly for updates. Continued use of our Applications is deemed approval of all changes.</p>
+      </div>
+
+      <!-- ─── TERMS & CONDITIONS CONTENT ─── -->
+      <div id="terms" class="tab-content">
+        <div class="date-badge">Effective Date: May 18, 2026</div>
+
+        <h2>1. Agreement to Terms</h2>
+        <p>By downloading, installing, or using mobile applications, games, and services provided by <strong>Teacup Studios</strong>, based in The Netherlands ("Service Provider", "we", "us", or "our"), you agree to be bound by these Terms &amp; Conditions. If you do not agree to these terms, do not install or use our Application.</p>
+
+        <h2>2. License to Use</h2>
+        <p>We grant you a personal, non-exclusive, non-transferable, revocable, and limited license to download, install, and use the Application for personal, non-commercial entertainment purposes on mobile devices owned or controlled by you, strictly in accordance with these Terms.</p>
+
+        <h2>3. User Restrictions</h2>
+        <p>You agree that you will not:</p>
+        <ul>
+          <li>Copy, modify, adapt, translate, or reverse-engineer the Application.</li>
+          <li>Distribute, rent, lease, lend, sell, or sublicense the Application to third parties.</li>
+          <li>Use the Application for any unlawful purpose or in violation of any local, national, or international laws.</li>
+          <li>Input, upload, or create custom game content (such as custom word categories) that is offensive, harmful, discriminatory, infringing on intellectual property, or otherwise inappropriate.</li>
+        </ul>
+
+        <h2>4. Intellectual Property Rights</h2>
+        <p>All intellectual property rights in the Application, including but not limited to code, graphics, layout, UI design, audio assets, trademarks, and gameplay mechanics, are owned exclusively by Teacup Studios and our licensors. You do not acquire any ownership rights by using the Application.</p>
+
+        <h2>5. In-App Purchases and Subscriptions</h2>
+        <p>Our Applications may offer virtual items, premium upgrades, or cosmetic content (such as "Masks" or premium features) for purchase. All purchases made within the Application are processed securely via the Apple App Store or Google Play Store billing systems.</p>
+        <ul>
+          <li><strong>Finality of Sales:</strong> All in-app purchases are final, non-refundable, and non-exchangeable except as required by applicable law or the payment provider's policies. For users residing in the European Union, you explicitly agree that the performance of digital content begins immediately upon purchase, and you acknowledge that you thereby lose your statutory right of withdrawal.</li>
+          <li><strong>Virtual Items:</strong> Virtual items (like Masks) are licensed to you on a limited, personal basis and have no cash value. They cannot be transferred, sold, or redeemed for real money.</li>
+        </ul>
+
+        <h2>6. Disclaimer of Warranties</h2>
+        <p>THE APPLICATION AND ALL ASSOCIATED SERVICES ARE PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED. WE DISCLAIM ALL WARRANTIES, INCLUDING ANY IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. WE DO NOT WARRANT THAT THE APPLICATION WILL BE UNINTERRUPTED, SECURE, ACCURATE, OR FREE OF ERRORS OR VIRUSES.</p>
+
+        <h2>7. Limitation of Liability</h2>
+        <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, TEACUP STUDIOS SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS, DATA, OR USE arising out of or in connection with your use of the Application, even if we have been advised of the possibility of such damages.</p>
+
+        <h2>8. Termination</h2>
+        <p>We reserve the right to suspend, terminate, or modify your access to the Application, or discontinue the Application entirely, at our sole discretion at any time without notice or liability to you.</p>
+
+        <h2>9. Governing Law</h2>
+        <p>These Terms &amp; Conditions and any disputes arising out of or related to them shall be governed by and construed in accordance with the laws of <strong>The Netherlands</strong>, without giving effect to any conflict of law principles.</p>
+
+        <h2>10. Contact Us</h2>
+        <p>If you have any questions or feedback regarding these Terms, please contact us via email at <a href="mailto:hello.teacupstudios@gmail.com">hello.teacupstudios@gmail.com</a>.</p>
+      </div>
+
+    </div>
+
+    <footer>
+      &copy; 2026 Teacup Studios. All rights reserved.
+    </footer>
+  </div>
+
+  <script>
+    function switchTab(event, tabId) {
+      // Get all tab content elements
+      const tabContents = document.querySelectorAll('.tab-content');
+      tabContents.forEach(content => {
+        content.classList.remove('active');
+      });
+
+      // Get all tab buttons
+      const tabButtons = document.querySelectorAll('.tab-btn');
+      tabButtons.forEach(btn => {
+        btn.classList.remove('active');
+      });
+
+      // Show current tab and set button active
+      document.getElementById(tabId).classList.add('active');
+      event.currentTarget.classList.add('active');
+
+      // Update URL hash without jumping page
+      history.pushState(null, null, '#' + tabId);
+    }
+
+    // Handle URL hash on load
+    window.addEventListener('DOMContentLoaded', () => {
+      const hash = window.location.hash.substring(1);
+      if (hash === 'privacy' || hash === 'terms') {
+        const btn = document.querySelector(`.tab-btn[onclick*="${hash}"]`);
+        if (btn) {
+          btn.click();
+        }
+      }
+    });
+  </script>
+</body>
+</html>
